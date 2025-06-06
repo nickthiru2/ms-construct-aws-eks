@@ -3,12 +3,19 @@
   "version": "0.1.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "imports": {
+    "#src/*": "./lib/*",
+    "#types/*": "./types/*",
+    "#constants/*": "./constants/*"
+  },
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest"
   },
   "devDependencies": {
+    "@aws-sdk/client-eks": "^3.825.0",
+    "@types/aws-lambda": "^8.10.149",
     "@types/jest": "^29.5.14",
     "@types/node": "22.7.9",
     "aws-cdk-lib": "2.199.0",
