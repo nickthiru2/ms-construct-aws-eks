@@ -1,6 +1,7 @@
 {
   "name": "ms-construct-aws-eks",
   "version": "0.1.0",
+  "description": "A reusable AWS CDK construct for EKS cluster",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "imports": {
@@ -8,10 +9,30 @@
     "#types/*": "./types/*",
     "#constants/*": "./constants/*"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nickthiru2/ms-construct-aws-eks.git"
+  },
+  "keywords": [
+    "aws",
+    "cdk",
+    "eks",
+    "construct",
+    "infrastructure"
+  ],
+  "author": "Nick Thiru <nick.thiru@gmail.com>",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "registry": "https://ms-324093102745.d.codeartifact.us-east-1.amazonaws.com/npm/eks-construct/"
+  },
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "prepare": "npm run build",
+    "publish:artifact": "npm publish"
   },
   "devDependencies": {
     "@aws-sdk/client-eks": "^3.825.0",
@@ -27,5 +48,18 @@
   "peerDependencies": {
     "aws-cdk-lib": "2.199.0",
     "constructs": "^10.0.0"
-  }
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "lib/**/*.js",
+    "lib/**/*.d.ts",
+    "types/**/*.ts",
+    "constants/**/*.ts",
+    "src/**/*.ts",
+    "src/**/*.js",
+    "types/**/*.js",
+    "constants/**/*.js"
+  ]
 }
